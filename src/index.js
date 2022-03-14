@@ -1,25 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// These two examples are identical
-const element1 = (
-  <h1 className="greeting">
-    Hello, world!
-  </h1>
-);
+const MyComponents = {
+  DatePicker: function DatePicker(props) {
+    return <div>Imagine a {props.color} datepicker here.</div>;
+  }
+}
 
-const element2 = React.createElement(
-  'h1',
-  { className: 'greeting' },
-  'Hello, world!'
-);
+function BlueDatePicker() {
+  // if MyComponents.DatePicker is a component, you can use it directly from JSX
+  return <MyComponents.DatePicker color="blue" />;
+}
 
 const element = (
-  <div>
-    {element1}
-    {element2}
-  </div>
-);
+  <BlueDatePicker />
+)
 
 ReactDOM.render(
   element,
