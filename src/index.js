@@ -5,11 +5,16 @@ const user = {
   avatarUrl: 'https://reactjs.org/logo-180x180.png'
 }
 
-// use quotes to specify string literals as attributes
-const element1 = <a href="https://www.reactjs.org"> link </a>;
+// If a tag is empty, you may close it immediately with />, like XML
+const element1 = <img src={user.avatarUrl} />;
 
-// use curly braces to embed a JavaScript expression in an attribute
-const element2 = <img src={user.avatarUrl}></img>;
+// JSX tags may contain children
+const element2 = (
+  <div>
+    <h1>Hello!</h1>
+    <h2>Good to see you here.</h2>
+  </div>
+);
 
 const element = (
   // uses camelCase property naming convention instead of HTML attribute names
