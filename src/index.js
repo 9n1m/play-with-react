@@ -1,26 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
-
-function getGreeting(user) {
-  if (user) {
-    return <h1>Hello, {formatName(user)}!</h1>;
-  }
-  return <h1>Hello, Stranger.</h1>;
-}
-
 const user = {
-  firstName: 'Harper',
-  lastName: 'Perez'
-};
+  avatarUrl: 'https://reactjs.org/logo-180x180.png'
+}
+
+// use quotes to specify string literals as attributes
+const element1 = <a href="https://www.reactjs.org"> link </a>;
+
+// use curly braces to embed a JavaScript expression in an attribute
+const element2 = <img src={user.avatarUrl}></img>;
 
 const element = (
-  <h1>
-    Hello, {getGreeting(user)}!
-  </h1>
+  // uses camelCase property naming convention instead of HTML attribute names
+  <div className='ele' tabIndex={1}>
+    {element1}
+    {element2}
+  </div>
 );
 
 ReactDOM.render(
